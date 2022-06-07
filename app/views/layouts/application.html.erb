@@ -11,6 +11,57 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar">
+      <div class="navbar-brand">
+        <%= link_to image_tag("cat-logo.png"), root_path, class: 'navbar-item' %>
+        <%= link_to 'Kitten Mittens', root_path, class: "navbar-item is-size-2 is-uppercase has-text-weight-bold" %>
+        <div class="navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+        
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown">
+            <div class="navbar-link">
+              Our Kittens
+            </div>
+            <div class="navbar-dropdown">
+              <div class="navbar-item">Small Kitten</div>
+              <div class="navbar-item">Medium Kitten</div>
+              <div class="navbar-item">Large Kitten</div>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div class="button is-light">Log In</div>
+          </div>
+          <div class="navbar-item">
+            <div class="button is-info">Sign Up</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-2">
+        <aside class="menu">
+          <p class="menu-label">General</p>
+          <ul class="menu-list">
+            <li><a href="">Pictures</a></li>
+            <li><a href="">Adopt</a></li>
+            <li><a href="">Search</a></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-three-fourths">
+        <%= yield %>
+      </div>
+    </div>
+    <footer class="footer">
+      <strong>Kitten Mittens</strong> was developed by the Kitten Corporation. Please reach out to us at <a href="mailto:charliekellymilktoast@ckmt.com">charliekellymilktoast@ckmt.com</a>
+    </footer>
   </body>
 </html>

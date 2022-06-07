@@ -16,7 +16,7 @@ class KittensController < ApplicationController
 
     respond_to do |format|
       if @kitten.save
-        format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created." }
+        format.html { redirect_to root_path, notice: "Kitten was successfully created." }
         format.json { render :show, status: :created, location: @kitten }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -26,13 +26,15 @@ class KittensController < ApplicationController
   end
 
   def edit
-    # @kitten = Kitten.find(params[:id])
+    @kitten = Kitten.find(params[:id])
   end
 
   def update
+    @kitten = Kitten.find(params[:id])
+
     respond_to do |format|
       if @kitten.update(kitten_params)
-        format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully updated." }
+        format.html { redirect_to root_path, notice: "Kitten was successfully updated." }
         format.json { render :show, status: :ok, location: @kitten }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -42,6 +44,7 @@ class KittensController < ApplicationController
   end
   
   def destroy
+    @kitten = Kitten.find(params[:id])
     @kitten.destroy
 
     respond_to do |format|

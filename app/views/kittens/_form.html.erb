@@ -1,0 +1,38 @@
+<div class="columns">
+  <div class="column is-half">
+    <p class='title'>Kitten</p>
+    <%= form_with model: @kitten, local: true do |f| %>
+      <div class="field">
+        <%= f.label :name, 'Name', class: 'label' %>
+        <div class="control">
+          <%= f.text_field :name, class: 'input', autofocus: true, placeholder: 'e.g. Stubby', required: true %>
+        </div>
+      </div>
+    
+      <div class="field">
+        <%= f.label :age, 'Age', class: 'label' %>
+        <div class="control">
+          <%= f.number_field :age, in: 0..30, step: 1, class: 'input', required: true %>
+        </div>
+      </div>
+    
+      <div class="field">
+        <%= f.label :cuteness, 'Cuteness Level (1-10)', class: 'label' %>
+        <div class="control">
+          <%= f.number_field :cuteness, in: 1..10, step: 1, class: 'input', required: true %>
+        </div>
+      </div>
+    
+      <div class="field">
+        <%= f.label :softness, 'Softness Level (1-10)', class: 'label' %>
+        <div class="control">
+          <%= f.number_field :softness, in: 1..10, step: 1, class: 'input', required: true %>
+        </div>
+      </div>
+    
+      <div class="control">
+        <%= f.submit class: 'button is-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="columns">
+  <div class="column is-half">
+    <p class="title">Kittens</p>
+    <% @kittens.each do |kitten| %>
+      <div class="box">
+        <div class="columns">
+          <div class="column">
+            <p><strong>Name:</strong> <%= kitten.name %></p>
+            <p><strong>Age:</strong> <%= kitten.age %></p>
+            <p><strong>Cuteness:</strong> <%= kitten.cuteness %></p>
+            <p><strong>Softness:</strong> <%= kitten.softness %></p>
+          </div>
+          <div class="column">
+            <div class="field is-grouped">
+              <div class="control">
+                <%= link_to 'Edit', edit_kitten_path(kitten), class: "button is-info" %>
+              </div>
+              <div class="control">
+                <%= button_to 'Delete', kitten_path(kitten), method: :delete, class: "button is-danger" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

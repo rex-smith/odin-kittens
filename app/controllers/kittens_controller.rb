@@ -19,7 +19,7 @@ class KittensController < ApplicationController
         format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created." }
         format.json { render :show, status: :created, location: @kitten }
       else
-        format.html { render: :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @kitten.errors, status: :unprocessable_entity }
       end
     end
@@ -35,7 +35,7 @@ class KittensController < ApplicationController
         format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully updated." }
         format.json { render :show, status: :ok, location: @kitten }
       else
-        format.html { render: :edit, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @kitten.errors, status: :unprocessable_entity }
       end
     end

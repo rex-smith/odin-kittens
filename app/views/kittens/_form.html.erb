@@ -2,6 +2,14 @@
   <div class="column is-half">
     <p class='title'>Kitten</p>
     <%= form_with model: @kitten, local: true do |f| %>
+      <% if @kitten.errors.any? %>
+        <ul>
+          <%= @kitten.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <div class="field">
         <%= f.label :name, 'Name', class: 'label' %>
         <div class="control">
